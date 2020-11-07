@@ -1,5 +1,9 @@
 let
-  Fonte = List.Dates(dDatadoexcel_Inicial_VC, Duration.Days(dDatadoexcel_Final_VC - dDatadoexcel_Inicial_VC) + 1, #duration(1, 0, 0, 0)),
+  Fonte = List.Dates(
+      dDatadoexcel_Inicial_VC, 
+      Duration.Days(dDatadoexcel_Final_VC - dDatadoexcel_Inicial_VC) + 1, 
+      #duration(1, 0, 0, 0)
+    ),
   #"Convertido para Tabela" = Table.FromList(
       Fonte, 
       Splitter.SplitByNothing(), 
@@ -77,13 +81,27 @@ let
         "SemanaMes"
       }
     ),
-    
-    /* Tipo alterado manualmente
+  /* Tipo alterado manualmente
     #"Tipo Alterado" = Table.TransformColumnTypes(#"Outras Expandido",{{"AnoNum", Int64.Type}, {"AnoInicio", type date}, {"AnoFinal", type date}, {"MesNum", Int64.Type}, {"MesIni", type date}, {"MesFim", type date}, {"MesDias", Int64.Type}, {"TrimestreIni", type date}, {"TrimestreFim", type date}, {"TrimestreAno", Int64.Type}, {"SemanaAno", Int64.Type}, {"SemanaMes", Int64.Type}}) 
     */
-
-    // tipo alterado por detecção automatica
-   
-   /* #"Tipo Alterado" = Table.TransformColumnTypes(#"Outras Expandido",{{"Data", type date}, {"AnoNum", Int64.Type}, {"AnoInicio", type date}, {"AnoFinal", type date}, {"MesNum", Int64.Type}, {"MesIni", type date}, {"MesFim", type date}, {"MesDias", Int64.Type}, {"TrimestreIni", type date}, {"TrimestreFim", type date}, {"TrimestreAno", Int64.Type}, {"SemanaAno", Int64.Type}, {"SemanaMes", Int64.Type}})
+  // tipo alterado por detecção automatica
+  #"Tipo Alterado" = Table.TransformColumnTypes(
+      #"Outras Expandido", 
+      {
+        {"Data", type date}, 
+        {"AnoNum", Int64.Type}, 
+        {"AnoInicio", type date}, 
+        {"AnoFinal", type date}, 
+        {"MesNum", Int64.Type}, 
+        {"MesIni", type date}, 
+        {"MesFim", type date}, 
+        {"MesDias", Int64.Type}, 
+        {"TrimestreIni", type date}, 
+        {"TrimestreFim", type date}, 
+        {"TrimestreAno", Int64.Type}, 
+        {"SemanaAno", Int64.Type}, 
+        {"SemanaMes", Int64.Type}
+      }
+    )
 in
-    #"Tipo Alterado"
+  #"Tipo Alterado"
