@@ -17,3 +17,4 @@ Linkedin: https://www.linkedin.com/in/vinicius-caldeira/
 Códigos, Links e Testes desde aprendiz!
 
 *    Formatar código M - http://powerqueryformatter.com/
+*    Busca por fórmulas - https://www.powerquery.io/
