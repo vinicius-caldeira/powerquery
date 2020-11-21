@@ -56,7 +56,7 @@ let
       #"Colunas Mescladas", 
 // inseririndo o comando no PQ para inserir os dados no SQL     
  "Personalizar", 
-      each "INSERT INTO Z_JOVIANO VALUES ('" & [Mesclado] & "');"
+      each "INSERT INTO Z_VINICIUS VALUES ('" & [Mesclado] & "');"
     ),
   #"Outras Colunas Removidas1" = Table.SelectColumns(#"Personalização Adicionada", {"Personalizar"})
 in
