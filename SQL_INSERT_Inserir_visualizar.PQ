@@ -9,28 +9,14 @@ Fonte = Sql.Database(
       "LOCALHOST", 
       "ADVENTUREWORKSDW2016",[Query = "  
          
--- retire os '--' abaixo para fazer inserção dos valores no banco de dados
--- "&ComandoFim&" // inserir os dados no SQL
+-- retire os '--' abaixo para fazer inserção dos valores no banco de dados -- O TEXTO É ALGUM COMENTARIO PARA O SQL
+"&ComandoFim&" -- inserir os dados no SQL
      
 -- visualize os dados inseridos (caso tenha banco dados instalado em sua máquina)
 SELECT * FROM Z_VINICIUS " // visualiza os dados inserido no SQL
       ]
     )
-// APOS DAR ENTER NO COMANDO ACIMA, DEVE SER APRESENTADO EMBAIXO A TABELA INSERIDA QUE ESTAVA NA LISTA
+
+// APOS DAR ENTER NO COMANDO ACIMA, REMOVENDO OS (--) DEVE SER APRESENTADO EMBAIXO A TABELA INSERIDA QUE ESTAVA NA LISTA
 in
   Fonte
-
-/* ARQUIVO ORIGINAL JOVIANO
-let
-    Fonte = Sql.Database("LOCALHOST", "ADVENTUREWORKSDW2016", [Query="
-
--- retire os '--' abaixo para fazer inserção dos valores no banco de dados
--- "&ComandoFim&"
-
--- visualize os dados inseridos (caso tenha banco dados instalado em sua máquina)
-SELECT * FROM Z_JOVIANO
-
-"])
-in
-    Fonte
-*/
