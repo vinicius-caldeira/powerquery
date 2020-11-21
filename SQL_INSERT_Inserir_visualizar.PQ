@@ -20,5 +20,6 @@ Fonte = Sql.Database(
 SELECT * FROM Z_JOVIANO " // visualiza os dados inserido no SQL
       ]
     )
+// APOS DAR ENTER NO COMANDO ACIMA, DEVE SER APRESENTADO EMBAIXO A TABELA INSERIDA QUE ESTAVA NA LISTA
 in
   Fonte
