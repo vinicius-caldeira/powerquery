@@ -11,6 +11,6 @@ let
       #"Personalização Adicionada", 
       {"Personalizar", each Text.Combine(List.Transform(_, Text.From)), type text}
     ), // COM ESSA LISTA PODEMOS EXTRAIR PARA NOVAS LINHAS, O NORMAL DE FAZERMOS, MAS NESTE CASO IREMOS EXTRAIR VALORES
-  Personalizar = #"Valores Extraídos"{0}[Personalizar] // ULTIMO PASSOU FOI FAZER DRILLDOWN DA LISTA ESXTRAIDA EM VALORES
+  Personalizar = #"Valores Extraídos"{0}[Personalizar] // ULTIMO PASSO FOI FAZER DRILLDOWN DA LISTA ESXTRAIDA EM VALORES
 in
   Personalizar
