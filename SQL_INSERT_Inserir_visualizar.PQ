@@ -8,18 +8,16 @@ Fonte = Sql.Database(
       "LOCALHOST", 
       "ADVENTUREWORKSDW2016", 
       [
-        Query
+        Query  // nesta query estamos fazendo dois comandos, um de inserir(ComandoFim) e outro de Visualizar(SELECT * FROM Z_JOVIANO)
           = "
 
 -- retire os '--' abaixo para fazer inserção dos valores no banco de dados
 -- "
             & ComandoFim // inserir os dados no SQL
-            & "
+         & "
 
 -- visualize os dados inseridos (caso tenha banco dados instalado em sua máquina)
-SELECT * FROM Z_JOVIANO 
-
-" // visualiza os dados inserido no SQL
+SELECT * FROM Z_JOVIANO " // visualiza os dados inserido no SQL
       ]
     )
 in
