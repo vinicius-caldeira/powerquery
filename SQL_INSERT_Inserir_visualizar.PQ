@@ -1,5 +1,6 @@
 let
-  Fonte = Sql.Database(
+// para criar essa estrutura, usamos um nova consulta e buscando do SQL SERVER, dando nome do servidor(localHost), nome do banco de dados(ADVENTUREWORKSDW2016), e  em opções avançadas usamos uma instrução de SELECT A=1, para que possa ser criado a estrutura
+Fonte = Sql.Database(
       "LOCALHOST", 
       "ADVENTUREWORKSDW2016", 
       [
@@ -8,13 +9,13 @@ let
 
 -- retire os '--' abaixo para fazer inserção dos valores no banco de dados
 -- "
-            & ComandoFim
+            & ComandoFim // inserir os dados no SQL
             & "
 
 -- visualize os dados inseridos (caso tenha banco dados instalado em sua máquina)
-SELECT * FROM Z_JOVIANO
+SELECT * FROM Z_JOVIANO 
 
-"
+" // visualiza os dados inserido no SQL
       ]
     )
 in
