@@ -1,5 +1,9 @@
 let
-// para criar essa estrutura, usamos um nova consulta e buscando do SQL SERVER, dando nome do servidor(localHost), nome do banco de dados(ADVENTUREWORKSDW2016), e  em opções avançadas usamos uma instrução de SELECT A=1, para que possa ser criado a estrutura
+/* 
+para criar essa estrutura, usamos um nova consulta e buscando do SQL SERVER, dando nome do servidor(localHost), 
+nome do banco de dados(ADVENTUREWORKSDW2016), e  em opções avançadas usamos uma instrução de SELECT A=1, 
+para que possa ser criado a estrutura 
+*/
 Fonte = Sql.Database(
       "LOCALHOST", 
       "ADVENTUREWORKSDW2016", 
