@@ -44,7 +44,8 @@ let
   #"Colunas Renomeadas" = Table.RenameColumns(#"Outras Colunas Removidas", {{"DATA", "DataVenda"}}),
   #"Tipo Alterado" = Table.TransformColumnTypes(#"Colunas Renomeadas", {{"VALOR", type text}}),
   #"Valor Substituído" = Table.ReplaceValue(
-      #"Tipo Alterado", 
+// para inserir no banco de dados não pode ter virgula (,) e sim ponto (.)     
+ #"Tipo Alterado", 
       ",", 
       ".", 
       Replacer.ReplaceText, 
@@ -63,7 +64,7 @@ let
         ), 
       {"PRODUTO", " NOME", " MARCA", " REPRESENTANTE", "DataVenda", "QTD", "VALOR"}, 
 // ao fazer a mesclagem, o power query pede pra inserir um separador, pode ser qualquer um da lista, iremo mudar depois,
-//para inserir no banco de dados deve estar entre aspas simples ( ' )
+//para inserir no banco de dados deve estar entre aspas simples ( ' ),
       Combiner.CombineTextByDelimiter(",", QuoteStyle.None), 
       "Mesclado"
     ),
