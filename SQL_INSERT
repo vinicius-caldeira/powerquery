@@ -62,7 +62,8 @@ let
           "pt-BR"
         ), 
       {"PRODUTO", " NOME", " MARCA", " REPRESENTANTE", "DataVenda", "QTD", "VALOR"}, 
-      Combiner.CombineTextByDelimiter("', '", QuoteStyle.None), 
+// ao fazer a mesclagem, o power query pede pra inserir um separador, pode ser qualquer um da lista, iremo mudar depois,
+      Combiner.CombineTextByDelimiter(",", QuoteStyle.None), 
       "Mesclado"
     ),
   #"Personalização Adicionada" = Table.AddColumn(
