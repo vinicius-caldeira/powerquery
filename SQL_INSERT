@@ -51,23 +51,7 @@ let
       Replacer.ReplaceText, 
       {"VALOR"}
     ),
-  #"Colunas Mescladas" = Table.CombineColumns(
-      Table.TransformColumnTypes(
-          #"Valor Substituído", 
-          {
-            {"PRODUTO", type text}, 
-            {"DataVenda", type text}, 
-            {"QTD", type text}, 
-            {"VALOR", type text}
-          }, 
-          "pt-BR"
-        ), 
-      {"PRODUTO", " NOME", " MARCA", " REPRESENTANTE", "DataVenda", "QTD", "VALOR"}, 
-// ao fazer a mesclagem, o power query pede pra inserir um separador, pode ser qualquer um da lista, iremo mudar depois,
-//para inserir no banco de dados deve estar entre aspas simples ( ' ),
-      Combiner.CombineTextByDelimiter(",", QuoteStyle.None), 
-      "Mesclado"
-    ),
+  #"Colunas Mescladas" = Table.CombineColumns(Table.TransformColumnTypes(#"Valor Substituído", {{"PRODUTO", type text}, {"DataVenda", type text}, {"QTD", type text}, {"VALOR", type text}}, "pt-BR"),{"PRODUTO", " NOME", " MARCA", " REPRESENTANTE", "DataVenda", "QTD", "VALOR"},Combiner.CombineTextByDelimiter("' , '", QuoteStyle.None),"Mesclado"),
   #"Personalização Adicionada" = Table.AddColumn(
       #"Colunas Mescladas", 
       "Personalizar", 
