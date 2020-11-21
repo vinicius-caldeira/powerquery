@@ -54,7 +54,8 @@ let
   #"Colunas Mescladas" = Table.CombineColumns(Table.TransformColumnTypes(#"Valor Substituído", {{"PRODUTO", type text}, {"DataVenda", type text}, {"QTD", type text}, {"VALOR", type text}}, "pt-BR"),{"PRODUTO", " NOME", " MARCA", " REPRESENTANTE", "DataVenda", "QTD", "VALOR"},Combiner.CombineTextByDelimiter("' , '", QuoteStyle.None),"Mesclado"),
   #"Personalização Adicionada" = Table.AddColumn(
       #"Colunas Mescladas", 
-      "Personalizar", 
+// inseririndo o comando no PQ para inserir os dados no SQL     
+ "Personalizar", 
       each "INSERT INTO Z_JOVIANO VALUES ('" & [Mesclado] & "');"
     ),
   #"Outras Colunas Removidas1" = Table.SelectColumns(#"Personalização Adicionada", {"Personalizar"})
